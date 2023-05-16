@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from marshmallow import Schema, fields
+from flask_cors import CORS
 
 from resources.adder import Adder
 from resources.reducer import Reducer
@@ -9,6 +10,7 @@ from resources.divider import Divider
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 api.add_resource(Adder, '/add/')
 api.add_resource(Reducer, '/reduce/')
