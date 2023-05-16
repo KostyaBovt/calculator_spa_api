@@ -8,3 +8,9 @@ services:
     ports:
       - 5000:5000
 
+  client:
+    image: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ./front:/usr/share/nginx/html
